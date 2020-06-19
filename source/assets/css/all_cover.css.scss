@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* Import includes */
+#bodyContent {
+    @import "bootstrap";
+    @import "_partials/cover";
+
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+
+    .site-wrapper {
+        background-color: #333;
+    }
+
+    .masthead {
+        padding-top: 18px;
+    }
+
+    .inner {
+        margin: auto;
+    }
+
+    @media (min-width: 40em) {
+        .masthead {
+            position: inherit;
+            top: inherit;
+        }
+        .mastfoot {
+            position: inherit;
+            bottom: inherit;
+        }
+    }
+
+    @media (min-width: 48em) {
+        .inner {
+            width: 42rem;
+        }
+    }
+
+    .inner.cover {
+        padding: 0rem 0rem 0rem;
+    }
+
+    .mastfoot {
+        line-height: 1.5rem;
+    }
+
+    /* remove https link styling */
+    a[href ^="https://"].btn-secondary, .link-http  {
+        background: #fff;
+    }
+}

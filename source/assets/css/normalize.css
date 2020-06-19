@@ -1,0 +1,91 @@
+
+/* Default Font and Sizing of Website */
+
+@media screen and (max-width: 760px) {
+  /*Make dropdown links appear inline*/
+  ul {
+    position: static;
+    display: none;
+  }
+  /*Create vertical spacing*/
+  li {
+    margin-bottom: 1px;
+  }
+  /*Make all menu links full width*/
+  ul li,
+  li a {
+    width: 100%;
+  }
+}
+
+/* hide undesired wiki objects */
+
+#sideMenu,
+#top_title {
+  display: none;
+}
+
+/* remove the paragraph containing the head inserted by the wiki */
+#mw-content-text + p {
+    display: none;
+}
+
+/* Fix top menu */
+#top_men_top {
+    height: 18px;
+}
+
+#top_men_under {
+    background-color: #383838;
+}
+
+/* maximize display size */
+
+html,
+body,
+#globalWrapper,
+#content,
+#HQ_page,
+#bodyContent,
+#mw-content-text {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+/* Move content up */
+#content {
+    position: absolute;
+    top: 0;
+    margin: 0;
+}
+
+/* normalize styling */
+
+html,
+body,
+#HQ_page {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff
+}
+
+/* Reset specific iGem Wiki settings */
+#HQ_page,
+#HQ_page p,
+#HQ_page a {
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: inherit;
+    color: inherit;
+}
+
+/* remove https link styling */
+#bodyContent a[href ^="https://"], .link-http {
+    background: inherit;
+    padding: inherit;
+}

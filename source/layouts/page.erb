@@ -1,0 +1,68 @@
+<% if development? %>
+	<%= partial "layouts/wiki_header" %>
+<% end %>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title><%= current_page.data.title %></title>
+	<!-- include normalizer -->
+	<%= stylesheet_link_tag "normalize" %>
+	<!-- include auto generated css -->
+	<%= stylesheet_link_tag "all" %>
+	<style>
+	#bodyContent .fixed-top {
+		top: 18px;
+	}
+
+	#mw-content-text > .container {
+		padding: 80px 0px 62px;
+        width: auto;
+	}
+
+	.footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 60px;
+		line-height: 60px;
+		background-color: #f5f5f5;
+	}
+
+	</style>
+	<!-- include auto generated javascript -->
+	<%= javascript_include_tag "all" %>
+</head>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<a class="navbar-brand" href="#">Fixed navbar</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+			<% data.navigation.links.each do |link| %>
+				<% content_tag :li, :class => "nav-item " << is_current_page(link.url) do %>
+                    <%= link_to link.title, link.url, :class => "nav-link " %>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<%= yield %>
+</div>
+
+
+<footer class="footer">
+	<div class="container">
+		<span class="text-muted">Place sticky footer content here.</span>
+	</div>
+</footer>
+<% if development? %>
+	<%= partial "layouts/wiki_footer" %>
+<% end %>
