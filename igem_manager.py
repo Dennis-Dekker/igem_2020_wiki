@@ -598,6 +598,3 @@ class IGemWikiManager(BaseIGemWikiManager):
 
 if __name__ == "__main__":
     IGemWikiManager.run()
-
-
-
